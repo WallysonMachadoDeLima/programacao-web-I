@@ -93,10 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (loginIndex !== -1) {
     // Substituir 'login' por 'home'
-    pathSegments[loginIndex] = 'cadastro';
+    pathSegments[loginIndex] = 'cadastro/index.html';
   } else {
     // Caso não encontre 'login', adicionar 'home' no final
-    pathSegments.push('cadastro');
+    pathSegments.push('cadastro/index.html');
   }
 
   // Atualizar o caminho da URL
