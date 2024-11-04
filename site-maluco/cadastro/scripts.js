@@ -115,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return regex.test(email);
   }
 
-  // Função para limpar o e-mail montado
   document.getElementById("limparEmail").addEventListener("click", () => {
     emailDisplay.innerText = "";
     mensagemEmail.innerText = "";
@@ -133,5 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(
         `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}\nE-mail: ${email}`
       );
+
+      window.location.href = "../home/index.html";
     });
 });
