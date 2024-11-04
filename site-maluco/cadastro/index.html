@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Pessoa</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Cadastro de Pessoa</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Contato - Meu Site</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <form id="cadastroForm">
+      <!-- Nome Completo -->
+      <label for="nome">Nome Completo</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        required
+        placeholder="Digite seu nome"
+      />
 
-<body>
-
-    <!-- Espaço para o header -->
-    <!-- Header -->
-    <!-- Header (Top Bar) -->
-    <nav class="top-bar">
-        <div class="logo">
-            <a href="index.html">Meu Site</a>
+      <!-- Gênero (Desenho com o Mouse) -->
+      <div id="generoContainer">
+        <label for="genero">Desenhe para escolher seu gênero</label>
+        <canvas id="canvasGenero" width="300" height="200"></canvas>
+        <input type="hidden" id="genero" name="genero" />
+        <div id="resultadoAnalise">
+          Gênero Identificado:
+          <span id="generoIdentificado">Desenhando...</span>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+        <button type="button" id="limparDesenho">Limpar Desenho</button>
+      </div>
 
+      <!-- Telefone (Gerar Número Aleatório) -->
+      <div id="telefoneContainer">
+        <label for="telefone">Telefone</label>
+        <div id="numeroAleatorio">
+          Clique em "Gerar Número" para gerar um telefone
+        </div>
+        <button type="button" id="gerarNumero">Gerar Número</button>
+        <input type="hidden" id="telefone" name="telefone" />
+      </div>
 
-    <!-- Conteúdo da Página -->
-    <section>
-        <h1>Fale Conosco</h1>
-        <p>Formulário ou informações de contato.</p>
-    </section>
+      <!-- Botão de Envio -->
+      <button type="submit">Cadastrar</button>
+    </form>
 
-    <!-- Inclusão do jQuery e do script.js -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-</body>
-
+    <script src="scripts.js"></script>
+  </body>
 </html>
