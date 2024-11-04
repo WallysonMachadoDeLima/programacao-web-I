@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Redirecionar para a nova URL
   window.location.href = url.href;
       } else {
-        showMessage("E-mail ou senha incorretos. Ou será que você esqueceu que está num site doido?", "red");
+        showMessage("E-mail ou senha incorretos.", "red");
       }
   
       // Limpar o formulário
