@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Evento de desenho para gênero
   canvas.addEventListener("mousedown", (event) => {
     isDrawing = true;
-    context.beginPath(); // Inicia um novo caminho quando o desenho começa
+    context.beginPath();
     context.moveTo(
       event.clientX - canvas.offsetLeft,
       event.clientY - canvas.offsetTop
@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   canvas.addEventListener("mouseup", () => {
     isDrawing = false;
-    context.beginPath(); // Encerra o caminho atual ao finalizar o traço
+    context.beginPath();
   });
 
   canvas.addEventListener("mousemove", (event) => {
     if (isDrawing) {
       draw(event);
-      analyzeDrawing(); // Chama a análise diretamente no movimento do mouse
+      analyzeDrawing();
     }
   });
 
@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     context.lineWidth = 2;
     context.lineCap = "round";
     context.strokeStyle = "#000";
-
     context.lineTo(
       event.clientX - canvas.offsetLeft,
       event.clientY - canvas.offsetTop
@@ -42,24 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // Função simulada para análise do desenho
   function analyzeDrawing() {
-    // Simulação para análise em tempo real: alterna entre "Masculino" e "Feminino"
     const generos = ["Masculino", "Feminino", "Não identificado"];
     const genero = generos[Math.floor(Math.random() * generos.length)];
-
     document.getElementById("genero").value = genero;
     document.getElementById("generoIdentificado").innerText = genero;
   }
 
-  // Função para limpar o canvas
   document.getElementById("limparDesenho").addEventListener("click", () => {
-    context.clearRect(0, 0, canvas.width, canvas.height); // Limpa o conteúdo do canvas
-    document.getElementById("generoIdentificado").innerText = "Desenhando..."; // Redefine o gênero identificado
-    document.getElementById("genero").value = ""; // Limpa o valor do campo oculto de gênero
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById("generoIdentificado").innerText = "Desenhando...";
+    document.getElementById("genero").value = "";
   });
 
-  // Gerador de número aleatório para telefone
   document.getElementById("gerarNumero").addEventListener("click", () => {
     const numero = generateRandomPhone();
     document.getElementById(
@@ -70,22 +64,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function generateRandomPhone() {
     const prefixo = "+55 9";
-    const numero = Math.floor(10000000 + Math.random() * 90000000); // Gera 8 dígitos
+    const numero = Math.floor(10000000 + Math.random() * 90000000);
     return `${prefixo}${numero}`;
   }
 
-  // Envio do formulário
+  // Quebra-Cabeça de E-mail
+  const emailDisplay = document.getElementById("emailDisplay");
+  const alfabetoContainer = document.getElementById("alfabeto");
+  const mensagemEmail = document.getElementById("mensagemEmail");
+  const verificarButton = document.getElementById("verificarEmail");
+
+  const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  alfabeto.split("").forEach((letra) => {
+    const peca = document.createElement("div");
+    peca.className = "peca";
+    peca.draggable = true;
+    peca.innerText = letra;
+    peca.setAttribute("data-value", letra.toLowerCase());
+    alfabetoContainer.appendChild(peca);
+  });
+
+  document.querySelectorAll(".peca").forEach((peca) => {
+    peca.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text", e.target.getAttribute("data-value"));
+    });
+  });
+
+  emailDisplay.addEventListener("dragover", (e) => e.preventDefault());
+
+  emailDisplay.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const value = e.dataTransfer.getData("text");
+    emailDisplay.innerText += value;
+  });
+
+  verificarButton.addEventListener("click", () => {
+    const email = emailDisplay.innerText;
+    if (validarEmail(email)) {
+      mensagemEmail.innerText = "E-mail válido!";
+      mensagemEmail.style.color = "green";
+    } else {
+      mensagemEmail.innerText =
+        "E-mail inválido. Por favor, complete o e-mail.";
+      mensagemEmail.style.color = "red";
+    }
+  });
+
+  function validarEmail(email) {
+    const regex = /^[a-z]+@[a-z]+\.(com|org|net)$/;
+    return regex.test(email);
+  }
+
+  // Função para limpar o e-mail montado
+  document.getElementById("limparEmail").addEventListener("click", () => {
+    emailDisplay.innerText = "";
+    mensagemEmail.innerText = "";
+  });
+
   document
     .getElementById("cadastroForm")
     .addEventListener("submit", function (e) {
       e.preventDefault();
-
       const nome = document.getElementById("nome").value;
       const genero = document.getElementById("genero").value;
       const telefone = document.getElementById("telefone").value;
+      const email = emailDisplay.innerText;
 
       alert(
-        `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}`
+        `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}\nE-mail: ${email}`
       );
     });
 });

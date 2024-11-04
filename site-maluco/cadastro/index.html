@@ -42,6 +42,47 @@
         <input type="hidden" id="telefone" name="telefone" />
       </div>
 
+      <!-- E-mail (Quebra-Cabeça) -->
+      <div id="emailContainer">
+        <label for="email">Monte seu E-mail</label>
+        <div id="emailMontagem" class="montagem">
+          <span>Monte seu e-mail aqui:</span>
+          <div id="emailDisplay" class="email-display"></div>
+        </div>
+
+        <!-- Botão para Limpar E-mail -->
+        <button type="button" id="limparEmail">Limpar E-mail</button>
+
+        <!-- Letras do alfabeto -->
+        <div class="pecas">
+          <h3>Escolha as Letras:</h3>
+          <div id="alfabeto"></div>
+        </div>
+
+        <!-- Domínios -->
+        <div class="pecas">
+          <h3>Escolha o Domínio:</h3>
+          <div id="dominios">
+            <div class="peca" draggable="true" data-value="@gmail.com">
+              @gmail.com
+            </div>
+            <div class="peca" draggable="true" data-value="@hotmail.com">
+              @hotmail.com
+            </div>
+            <div class="peca" draggable="true" data-value="@yahoo.com">
+              @yahoo.com
+            </div>
+            <div class="peca" draggable="true" data-value="@outlook.com">
+              @outlook.com
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão de Verificação -->
+        <button type="button" id="verificarEmail">Verificar E-mail</button>
+        <p id="mensagemEmail"></p>
+      </div>
+
       <!-- Botão de Envio -->
       <button type="submit">Cadastrar</button>
     </form>
