@@ -9,37 +9,19 @@
 </head>
 
 <body>
-    <h1>Bem-vindo à Página Inicial Confusa!</h1>
+    <header>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="index.html">Cadastro</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="../login/index.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div id="mainContainer">
-        <div id="navigation">
-            <button id="homeButton">Início</button>
-            <button id="aboutButton">Sobre</button>
-            <button id="contactButton">Contato</button>
-        </div>
-
-        <div id="content">
-            <video id="myVideo" width="400" autoplay muted loop>
-                <source src="seu-video.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <div id="customVolumeControl">
-                <label for="volumeSlider">Volume:</label>
-                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
-            </div>
-        </div>
-
-        <div id="movingText">
-            <p>Tente clicar neste texto!</p>
-        </div>
-
-        <div id="hiddenButtonContainer">
-            <button id="hiddenButton">Clique se puder!</button>
-        </div>
-
-        <p id="message"></p>
-    </div>
-
+    <iframe src="http://www.staggeringbeauty.com" id="fullScreenIframe"></iframe>
     <script src="scripts.js"></script>
 </body>
 

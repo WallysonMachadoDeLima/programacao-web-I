@@ -13,22 +13,33 @@ body {
   padding: 0;
 }
 
+
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: linear-gradient(90deg, #4caf50, #45a049);
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Garante que o header fique acima de outros elementos */
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: center;
-  margin: 0;
+  margin: 0 20px; /* Adiciona margem lateral para espaçamento */
   padding: 0;
 }
 
-header nav ul li {
-  margin: 0 15px;
+header nav ul.nav-left li,
+header nav ul.nav-right li {
+  margin: 0 10px;
 }
 
 header nav ul li a {
@@ -42,6 +53,7 @@ header nav ul li a {
 header nav ul li a:hover {
   color: #ffeb3b;
 }
+
 
 .container {
   width: 100%;

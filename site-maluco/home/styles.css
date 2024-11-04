@@ -1,110 +1,56 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    overflow: hidden;
+html, body {
     margin: 0;
     padding: 0;
-}
-
-h1 {
-    font-size: 28px;
-    margin: 20px 0;
-    text-align: center;
-}
-
-#mainContainer {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 0 auto;
+    height: 100%;
     overflow: hidden;
-    border: 5px dashed #ccc;
 }
 
-#navigation {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-#navigation button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #ddd;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#navigation button:hover {
-    background-color: #ccc;
-}
-
-#content {
-    position: relative;
-    text-align: center;
-}
-
-#myVideo {
-    width: 400px;
-    border: 2px solid #ccc;
-}
-
-#customVolumeControl {
-    position: absolute;
-    top: 50px;
-    right: -50px;
-    transform: rotate(90deg);
-}
-
-#customVolumeControl input[type="range"] {
-    width: 150px;
-}
-
-#movingText {
-    position: absolute;
+#fullScreenIframe {
+    position: fixed;
     top: 0;
     left: 0;
-    animation: moveText 10s infinite linear;
-}
-
-#movingText p {
-    font-size: 18px;
-    color: red;
-    cursor: pointer;
-}
-
-@keyframes moveText {
-    0% { top: 0; left: 0; }
-    25% { top: 0; left: 100%; }
-    50% { top: 100%; left: 100%; }
-    75% { top: 100%; left: 0; }
-    100% { top: 0; left: 0; }
-}
-
-#hiddenButtonContainer {
-    position: absolute;
-    bottom: -50px;
-    left: calc(50% - 75px);
-}
-
-#hiddenButton {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
+    width: 100%;
+    height: 100%;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-#hiddenButton:hover {
-    background-color: #45a049;
-}
-
-#message {
-    margin-top: 20px;
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #4caf50, #45a049);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0 20px; /* Adiciona margem lateral para espaçamento */
+    padding: 0;
+  }
+  
+  header nav ul.nav-left li,
+  header nav ul.nav-right li {
+    margin: 0 10px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    text-align: center;
-}
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    color: #ffeb3b;
+  }
+  
