@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const context = canvas.getContext("2d");
   let isDrawing = false;
 
-  // Evento de desenho para gênero
   canvas.addEventListener("mousedown", (event) => {
     isDrawing = true;
     context.beginPath();
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function analyzeDrawing() {
-    const generos = ["Masculino", "Feminino", "Não identificado"];
+    const generos = ["Masculino", "Feminino"];
     const genero = generos[Math.floor(Math.random() * generos.length)];
     document.getElementById("genero").value = genero;
     document.getElementById("generoIdentificado").innerText = genero;
@@ -68,7 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
     return `${prefixo}${numero}`;
   }
 
-  // Quebra-Cabeça de E-mail
+  const estadoCivilTexto = document.getElementById("estadoCivilTexto");
+  const estadoCivilInput = document.getElementById("estadoCivil");
+
+  document.querySelectorAll(".emoji").forEach((emoji) => {
+    emoji.addEventListener("click", () => {
+      const estadoCivilSelecionado = emoji.getAttribute("data-value");
+      estadoCivilTexto.innerText = estadoCivilSelecionado;
+      estadoCivilInput.value = estadoCivilSelecionado;
+    });
+  });
+
   const emailDisplay = document.getElementById("emailDisplay");
   const alfabetoContainer = document.getElementById("alfabeto");
   const mensagemEmail = document.getElementById("mensagemEmail");
@@ -128,11 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const genero = document.getElementById("genero").value;
       const telefone = document.getElementById("telefone").value;
       const email = emailDisplay.innerText;
+      const estadoCivil = estadoCivilInput.value;
 
       alert(
-        `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}\nE-mail: ${email}`
+        `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}\nE-mail: ${email}\nEstado Civil: ${estadoCivil}`
       );
-
-      window.location.href = "../home/index.html";
     });
 });

@@ -1,6 +1,9 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-image: url("../img/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +20,7 @@ h1 {
 }
 
 form {
-  width: 700px; /* Aumenta a largura do formulário */
+  width: 700px;
   background: #fff;
   padding: 30px;
   border-radius: 10px;
@@ -43,7 +46,8 @@ input[type="text"] {
 
 #generoContainer,
 #telefoneContainer,
-#emailContainer {
+#emailContainer,
+#estadoCivilContainer {
   margin-top: 30px;
 }
 
@@ -54,7 +58,7 @@ canvas {
   display: block;
   margin: 10px auto;
   width: 100%;
-  max-width: 400px; /* Limita a largura máxima do canvas */
+  max-width: 400px;
 }
 
 #resultadoAnalise {
@@ -144,4 +148,27 @@ button[type="submit"]:hover {
 
 #limparEmail:hover {
   background-color: #ff4c4c;
+}
+
+#emojiNuvem {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.emoji {
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.emoji:hover {
+  transform: scale(1.3);
+}
+
+#estadoCivilSelecionado {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 16px;
 }
