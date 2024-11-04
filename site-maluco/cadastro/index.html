@@ -28,7 +28,6 @@
       <label for="nome">Nome Completo</label>
       <input type="text" id="nome" name="nome" required placeholder="Digite seu nome" />
 
-      <!-- Gênero (Desenho com o Mouse) -->
       <div id="generoContainer">
         <label for="genero">Desenhe para escolher seu gênero</label>
         <canvas id="canvasGenero" width="300" height="200"></canvas>
@@ -40,7 +39,6 @@
         <button type="button" id="limparDesenho">Limpar Desenho</button>
       </div>
 
-      <!-- Telefone (Gerar Número Aleatório) -->
       <div id="telefoneContainer">
         <label for="telefone">Telefone</label>
         <div id="numeroAleatorio">
@@ -50,7 +48,21 @@
         <input type="hidden" id="telefone" name="telefone" />
       </div>
 
-      <!-- E-mail (Quebra-Cabeça) -->
+      <div id="estadoCivilContainer">
+        <label for="estadoCivil">Escolha seu Estado Civil</label>
+        <div id="emojiNuvem">
+          <span class="emoji" data-value="Solteiro(a)">😂</span>
+          <span class="emoji" data-value="Casado(a)">❤️</span>
+          <span class="emoji" data-value="Divorciado(a)">😭</span>
+          <span class="emoji" data-value="Viúvo(a)">🖤</span>
+          <span class="emoji" data-value="Complicado">🤔</span>
+        </div>
+        <input type="hidden" id="estadoCivil" name="estadoCivil" />
+        <p id="estadoCivilSelecionado">
+          Estado Civil: <span id="estadoCivilTexto">Nenhum</span>
+        </p>
+      </div>
+
       <div id="emailContainer">
         <label for="email">Monte seu E-mail</label>
         <div id="emailMontagem" class="montagem">
@@ -58,16 +70,13 @@
           <div id="emailDisplay" class="email-display"></div>
         </div>
 
-        <!-- Botão para Limpar E-mail -->
         <button type="button" id="limparEmail">Limpar E-mail</button>
 
-        <!-- Letras do alfabeto -->
         <div class="pecas">
           <h3>Escolha as Letras:</h3>
           <div id="alfabeto"></div>
         </div>
 
-        <!-- Domínios -->
         <div class="pecas">
           <h3>Escolha o Domínio:</h3>
           <div id="dominios">
@@ -86,12 +95,10 @@
           </div>
         </div>
 
-        <!-- Botão de Verificação -->
         <button type="button" id="verificarEmail">Verificar E-mail</button>
         <p id="mensagemEmail"></p>
       </div>
 
-      <!-- Botão de Envio -->
       <button type="submit">Cadastrar</button>
     </form>
   </div>
