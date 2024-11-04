@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#mainContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 5px dashed #ccc;
+}
+
+#navigation {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#navigation button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#navigation button:hover {
+    background-color: #ccc;
+}
+
+#content {
+    position: relative;
+    text-align: center;
+}
+
+#myVideo {
+    width: 400px;
+    border: 2px solid #ccc;
+}
+
+#customVolumeControl {
+    position: absolute;
+    top: 50px;
+    right: -50px;
+    transform: rotate(90deg);
+}
+
+#customVolumeControl input[type="range"] {
+    width: 150px;
+}
+
+#movingText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: moveText 10s infinite linear;
+}
+
+#movingText p {
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+}
+
+@keyframes moveText {
+    0% { top: 0; left: 0; }
+    25% { top: 0; left: 100%; }
+    50% { top: 100%; left: 100%; }
+    75% { top: 100%; left: 0; }
+    100% { top: 0; left: 0; }
+}
+
+#hiddenButtonContainer {
+    position: absolute;
+    bottom: -50px;
+    left: calc(50% - 75px);
+}
+
+#hiddenButton {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#hiddenButton:hover {
+    background-color: #45a049;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}

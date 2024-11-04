@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Login - Meu Site</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login e Cadastro de Usuário</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+    <h1>Login e Cadastro de Usuário</h1>
 
-    <!-- Espaço para o header -->
-    <div id="header"></div>
+    <div id="formContainer">
+        <div id="buttons">
+            <button id="loginButton">Login</button>
+            <button id="registerButton">Cadastro</button>
+        </div>
 
-    <!-- Conteúdo da Página -->
-    <section>
-        <h1>Login</h1>
+        <!-- Formulário de Login -->
         <form id="loginForm">
-            <label for="usuario">Usuário:</label>
-            <input type="text" id="usuario" name="usuario" required><br><br>
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" name="email" required placeholder="Digite seu e-mail" />
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required><br><br>
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" name="password" required placeholder="Digite sua senha" />
 
             <button type="submit">Entrar</button>
         </form>
-    </section>
 
-    <!-- Inclusão do jQuery e do script.js -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+        <!-- Formulário de Cadastro -->
+        <form id="registerForm" style="display: none;">
+            <label for="registerName">Nome Completo</label>
+            <input type="text" id="registerName" name="name" required placeholder="Digite seu nome" />
+
+            <label for="registerEmail">E-mail</label>
+            <input type="email" id="registerEmail" name="email" required placeholder="Digite seu e-mail" />
+
+            <label for="registerPassword">Senha</label>
+            <input type="password" id="registerPassword" name="password" required placeholder="Digite sua senha" />
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>

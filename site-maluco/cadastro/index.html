@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Pessoa</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Pessoa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Header com navegação -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../home/index.html">Home</a></li>
+        <li><a href="../login/index.html">Login</a></li>
+        <li><a href="index.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
     <h1>Cadastro de Pessoa</h1>
 
     <form id="cadastroForm">
       <!-- Nome Completo -->
       <label for="nome">Nome Completo</label>
-      <input
-        type="text"
-        id="nome"
-        name="nome"
-        required
-        placeholder="Digite seu nome"
-      />
+      <input type="text" id="nome" name="nome" required placeholder="Digite seu nome" />
 
       <!-- Gênero (Desenho com o Mouse) -->
       <div id="generoContainer">
@@ -86,7 +94,9 @@
       <!-- Botão de Envio -->
       <button type="submit">Cadastrar</button>
     </form>
+  </div>
 
-    <script src="scripts.js"></script>
-  </body>
+  <script src="scripts.js"></script>
+</body>
+
 </html>

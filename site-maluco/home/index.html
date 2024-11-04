@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Contato - Meu Site</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Inicial Confusa</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+    <h1>Bem-vindo à Página Inicial Confusa!</h1>
 
-    <!-- Header (Top Bar) -->
-    <nav class="top-bar">
-        <div class="logo">
-            <a href="index.html">Meu Site</a>
+    <div id="mainContainer">
+        <div id="navigation">
+            <button id="homeButton">Início</button>
+            <button id="aboutButton">Sobre</button>
+            <button id="contactButton">Contato</button>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
 
+        <div id="content">
+            <video id="myVideo" width="400" autoplay muted loop>
+                <source src="seu-video.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div id="customVolumeControl">
+                <label for="volumeSlider">Volume:</label>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
 
-    <!-- Conteúdo da Página -->
-    <section>
-        <h1>Fale Conosco</h1>
-        <p>Formulário ou informações de contato.</p>
-    </section>
+        <div id="movingText">
+            <p>Tente clicar neste texto!</p>
+        </div>
 
-    <!-- Inclusão do jQuery e do script.js -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+        <div id="hiddenButtonContainer">
+            <button id="hiddenButton">Clique se puder!</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>
