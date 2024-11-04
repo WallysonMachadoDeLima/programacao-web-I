@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let pathSegments = url.pathname.split('/');
 
   // Encontrar o índice do segmento 'login'
-  let loginIndex = pathSegments.indexOf('login');
+  let loginIndex = pathSegments.indexOf('login/index.html');
 
   if (loginIndex !== -1) {
     // Substituir 'login' por 'home'
