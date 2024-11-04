@@ -140,7 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const estadoCivil = estadoCivilInput.value;
 
       alert(
-        `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}\nE-mail: ${email}\nEstado Civil: ${estadoCivil}`
+        `Cadastro realizado com sucesso:\nNome: ${nome}\nGênero: ${genero}\nTelefone: ${telefone}\nE-mail: ${email}`
       );
+
+      window.location.href = "../home/index.html";
     });
 });
