@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const registerButton = document.getElementById("registerButton");
   const message = document.getElementById("message");
 
-  // ->Função para alternar entre Login e Cadastro
+  // -> Função para alternar entre Login e Cadastro
   loginButton.addEventListener("click", () => {
       loginForm.style.display = "block";
       registerForm.style.display = "none";
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       message.innerText = "";
   });
 
-  // ->Manipular o formulário de cadastro
+  // -> Manipular o formulário de cadastro
   registerForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
       }
 
-      // ->Obter usuários existentes do localStorage
+      // -> Obter usuários existentes do localStorage
       let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      // ->Verificar se o e-mail já está cadastrado
+      // -> Verificar se o e-mail já está cadastrado
       const emailExists = users.find((user) => user.email === email);
 
       if (emailExists) {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
       }
 
-      // ->Verificar se a senha já está em uso
+      // -> Verificar se a senha já está em uso
       const passwordExists = users.find((user) => user.password === password);
 
       if (passwordExists) {
@@ -50,17 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
       }
 
-      // ->Adicionar novo usuário
+      // -> Adicionar novo usuário
       users.push({ name: name, email: email, password: password });
       localStorage.setItem("users", JSON.stringify(users));
 
       showMessage("Cadastro realizado com sucesso! Agora você faz parte do clube dos doidos!", "green");
 
-      // ->Limpar o formulário
+      // -> Limpar o formulário
       registerForm.reset();
   });
 
-  // ->Manipular o formulário de login
+  // -> Manipular o formulário de login
   loginForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -72,20 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
       }
 
-      // ->Obter usuários existentes do localStorage
+      // -> Obter usuários existentes do localStorage
       let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      // ->Verificar se o usuário existe e a senha está correta
+      // -> Verificar se o usuário existe e a senha está correta
       const user = users.find((user) => user.email === email && user.password === password);
 
       if (user) {
-          // ->Redirecionar para a página de home diretamente
+          // -> Redirecionar para a página de home diretamente
           window.location.href = "https://wallysonmachadodelima.github.io/programacao-web-I/cadastro/index.html";
       } else {
           showMessage("E-mail ou senha incorretos.", "red");
       }
 
-      // ->Limpar o formulário
+      // -> Limpar o formulário
       loginForm.reset();
   });
 
