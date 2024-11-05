@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (user) {
           // Redirecionar para a página de home diretamente
-          window.location.href = "home/index.html";
+          window.location.href = "https://wallysonmachadodelima.github.io/programacao-web-I/cadastro/index.html";
       } else {
           showMessage("E-mail ou senha incorretos.", "red");
       }
